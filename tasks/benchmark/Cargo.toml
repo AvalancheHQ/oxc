@@ -104,7 +104,7 @@ oxc_span = { workspace = true, optional = true, features = ["schemars", "seriali
 oxc_tasks_common = { workspace = true, optional = true }
 oxc_transformer = { workspace = true, optional = true }
 
-criterion2 = { workspace = true }
+criterion = { package = "codspeed-criterion-compat", version = "=5.0.3" }
 
 # Only for lexer benchmarks
 cow-utils = { workspace = true, optional = true }
@@ -115,8 +115,8 @@ serde_json = { workspace = true, optional = true }
 
 [features]
 default = ["compiler", "linter"]
-codspeed = ["criterion2/codspeed"]
-codspeed_napi = ["criterion2/codspeed", "dep:serde", "dep:serde_json"]
+codspeed = []
+codspeed_napi = ["dep:serde", "dep:serde_json"]
 
 # Features for running benchmarks with minimum dependencies.
 # "compiler" feature includes: lexer, parser, transformer, semantic, minifier, codegen, formatter
